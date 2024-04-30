@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 const userRouter = require("./routes/user");
+const blogRoute = require("./routes/blog");
 
 const app = express();
 const PORT = 8000;
@@ -23,5 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRouter);
+app.use("/blog", blogRoute);
+
 
 app.listen(PORT, () => console.log(`Server is running at PORT ${PORT}`));
