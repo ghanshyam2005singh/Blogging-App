@@ -9,34 +9,36 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
-              <% if (local.user) {  %>
-              <li class="nav-item">
-                <a class="nav-link" href="addBlog">Add Blogs</a>
-              </li>
-              <%} %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    User
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
-                  <li><a class="dropdown-item" href="#">Sign-In with another account</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Suggestion</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Create Account</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              <% if (locals.user) { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/blog/add-new">Add Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Ghanshyam Singh
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+                  </ul>
+                </li>
+                <% } else {%>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/signup">Create Account</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user/signin">Signin</a>
+                </li>
+                <% } %>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-
+        </nav>
       <% if (local.error) { %>
         <div class="alert alert-danger" role="alert">
           <%= local.error %>
