@@ -1,17 +1,20 @@
 {
   "name": "blogging-application",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "<h2>It is a Blogging site</h2>\r <h4>You can create your account and start blogging in it</h4>",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.3.2"
+    "mongoose": "^8.3.2",
+    "multer": "^1.4.5-lts.1"
   }
 }
