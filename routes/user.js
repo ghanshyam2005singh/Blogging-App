@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const User = require("../models/user");
 
 const router = Router();
@@ -25,6 +25,10 @@ router.post("/singin", async (req, res) => {
     }
 );
 
+router.get("/logout", (req, res) => {
+    res.clearCookie("token").redirect("/");
+});
+
 router.post("/signup", async (req, res) => {
     const { fullName, email, password} = req.body;
     await User.create({
@@ -35,4 +39,4 @@ router.post("/signup", async (req, res) => {
     return res.redirect("/");
 });
 
-module.export = router;
+module.exports = router;
